@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ajax LESSON </title>
+<script>
+ function getDataFromText()
+ {
+      var xmlhttp;
+	if(window.XMLHttpRequest){
+                xmlhttp=new XMLHttpRequest();								}
+	  else{
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+	xmlhttp.onreadystatechange=function(){
+              if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                        document.getElementById('data').innerHTML=xmlhttp.responseText;
+                                                               }
+                                               }
+   xmlhttp.open("GET","data.txt",true);
+   xmlhttp.send();
+ }
+ 
+</script>
+</head>
+<body>
+<div id="data"><h2>Replace this text</h2></div>
+<button type="button" onclick="getDataFromText()">Get Data</button>
+
+
+</body>
+</html>
